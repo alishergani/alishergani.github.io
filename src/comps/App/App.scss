@@ -1,0 +1,30 @@
+.navigation {
+    // background: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    &_item {
+        text-decoration: none;
+        color: #5d5d5d;
+        text-align: center;
+        width: 100%;
+        padding: 4px 10px;
+        font-weight: bold;
+        transition: .4s;
+        &:hover {
+            padding: 10px;
+            transform: scale(1.4);
+            color: #fff;
+        }
+    }
+}
+
+.page {
+    padding: 0px 100px;
+}
