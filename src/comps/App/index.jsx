@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import './App.scss'
-import { Home, About } from './../../pages'
+import { Home, About, Contactme } from './../../pages'
 
 export default function App() {
     return (
@@ -9,11 +9,13 @@ export default function App() {
             <nav className="navigation">
                 <Link className="navigation_item" to="/">home</Link>
                 <Link className="navigation_item" to="/about">about</Link>
+                <Link className="navigation_item" to="/contactme">contact</Link>
             </nav>
             <div className="page">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/contactme" element={<Contactme />} />
                 </Routes>
             </div>
         </div>
