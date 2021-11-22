@@ -1,9 +1,14 @@
+.app {
+    display: flex;
+}
+
 .navigation {
     // background: red;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,16 +20,29 @@
         text-align: center;
         width: 100%;
         padding: 4px 10px;
+        margin-bottom: 10px;
         font-weight: bold;
         transition: .4s;
-        &:hover {
-            padding: 10px;
-            transform: scale(1.4);
+        border-bottom: 1px solid transparent;
+        &.active {
             color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        &:hover {
+            color: #fff;
+            border-bottom: 1px solid #fff;
         }
     }
 }
 
 .page {
-    padding: 0px 100px;
+    padding: 10px 100px;
+    flex-grow: 1;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .page {
+        padding: 0px 10px;
+    }
 }

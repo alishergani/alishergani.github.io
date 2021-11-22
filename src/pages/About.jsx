@@ -16,13 +16,11 @@ export default function About() {
             </div>
 
             <div className="content">
-                <h3 className="title">Hi, my name is <span className="blue">Alisher</span></h3>
+                <h3 className="title">Hi, my name is <span className="blue">Alisher</span>. Nice to meet you</h3>
                 <p className="aticle">
-                    I'm <span className="red">frontend developer</span> from Kazakhstan
+                    I'm <span className="red">frontend developer</span> from <a href="https://www.google.com/maps/place/Almaty">Kazakhstan, Almaty</a>
                 </p>
-                <p className="aticle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sunt nihil accusantium nulla, labore harum excepturi quas corrupti nobis. Qui magni doloribus consequuntur praesentium maiores aspernatur ipsum. Eum, ipsum assumenda possimus fugit pariatur sit accusamus corrupti iusto non quos consectetur reiciendis quasi asperiores adipisci, molestiae voluptas. Nisi suscipit error enim velit eum fugiat iste, voluptatibus fuga odio, repudiandae earum distinctio consequuntur rem maiores at dolores eius nesciunt tempora facere laboriosam placeat labore iure tempore! Vel non error est quibusdam eveniet asperiores doloremque ducimus? Dignissimos tenetur vitae in totam alias animi deleniti, placeat illum cupiditate reprehenderit impedit explicabo asperiores deserunt voluptas voluptates illo voluptate ut doloremque. Modi doloribus laboriosam quas laudantium at mollitia eius autem debitis deleniti atque itaque dolore illum vero amet tempore, rerum fuga placeat, eligendi facilis. Tempore maiores quaerat consequatur quas! At voluptatibus recusandae minima eum corporis. Qui magnam reprehenderit quos, quidem optio nostrum nemo? Tempore, eum facilis.
-                </p>
+                <p className="aticle"></p>
             </div>
         </>
     )
