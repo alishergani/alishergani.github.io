@@ -1,12 +1,11 @@
 import React from 'react'
-import icon from './../static/send-icon.svg'
 
-export default function Contactme({handleNotif}) {
+export default function Contactme() {
     return (
         <>
             <div className="container">
                 <div className="row">
-                    <p>MY SOCIALS:</p>
+                    <p>SOCIALS:</p>
                     <ul className="row_list">
                         <li className="row_item">
                             <a href="https://t.me/ka4anbek" target="_blank" rel="noreferrer">
