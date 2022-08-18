@@ -18,11 +18,6 @@ export default function Contactme({handleNotif}) {
                                 <img src="https://cdn-icons-png.flaticon.com/512/25/25657.png" alt="github" />
                             </a>
                         </li>
-                        <li className="row_item">
-                            <a href="https://www.instagram.com/ka4anbek/" target="_blank" rel="noreferrer">
-                                <img src="https://cdn-icons-png.flaticon.com/512/1419/1419647.png" alt="instagram" />
-                            </a>
-                        </li>
                     </ul>
 
                 </div>
