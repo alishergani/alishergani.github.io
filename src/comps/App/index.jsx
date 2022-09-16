@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import './App.scss'
-import { Home, About, Contactme, Wedding } from './../../pages'
+import { Home, About, Contactme } from './../../pages'
 import Notification from './../Notification'
 
 export default function App() {
@@ -43,7 +43,6 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contactme" element={<Contactme handleNotif={addNotif} />} />
-                    <Route path="/wedding" element={<Wedding />} />
                 </Routes>
             </div>
         </div>
