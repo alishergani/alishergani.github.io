@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "export",
   assetPrefix: isProd ? "/" : "",
-  basePath: isProd ? "/nextjs-github-pages" : "",
+  basePath: "/",
   images: {
     unoptimized: true,
   },
