@@ -1,5 +1,7 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 
+const styles = {};
+
 export const FrontenderTitle = () => {
   return (
     <Flex
@@ -9,10 +11,12 @@ export const FrontenderTitle = () => {
       title="у меня беда с выбором цветов"
     >
       <Text
-        fontSize={"40px"}
-        fontWeight={"700"}
-        lineHeight={"46px"}
         color={"#8f00ff"}
+        fontSize="64px"
+        fontWeight="700"
+        lineHeight="47px"
+        bg={`radial-gradient(ellipse farthest-corner at center center,#4131cf 0%,#36ff28 100%)`}
+        bgClip="text"
       >
         FRONTEND
       </Text>
