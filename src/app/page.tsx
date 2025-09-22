@@ -1,23 +1,45 @@
 "use client";
-import {
-  Box,
-  Button,
-  Flex,
-  Highlight,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Highlight, Text } from "@chakra-ui/react";
 import AskModal from "../components/AskModal";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { db } from "./firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 export default function Home() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      onOpen();
-    }, 2000);
+    const lastShown = localStorage.getItem("role_modal_shown");
+    if (!lastShown) {
+      setShowModal(() => true);
+      return;
+    }
+
+    const lastDate = new Date(lastShown);
+    const now = new Date();
+
+    // считаем разницу в днях
+    const diffDays =
+      (now.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24);
+
+    if (diffDays >= 2) {
+      setShowModal(() => true);
+    }
   }, []);
+
+  const handleSelected = async (type: string) => {
+    localStorage.setItem("role_modal_shown", new Date().toISOString());
+    setShowModal(() => false);
+    try {
+      await addDoc(collection(db, "users"), {
+        type,
+        createdAt: new Date(),
+      });
+      alert("Сохранено ✅");
+    } catch (err) {
+      console.error("Ошибка:", err);
+    }
+  };
   return (
     <>
       <Flex alignItems={"center"} flexDir={"column"}>
@@ -145,7 +167,11 @@ export default function Home() {
         </Flex>
       </Flex>
 
-      <AskModal isOpen={isOpen} onClose={onClose} />
+      <AskModal
+        isOpen={showModal}
+        onClose={() => setShowModal(() => false)}
+        handleSelected={handleSelected}
+      />
     </>
   );
 }
