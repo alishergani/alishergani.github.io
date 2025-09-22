@@ -89,7 +89,12 @@ export default function Home() {
                 WhatsApp
               </Button>
 
-              <Button variant="brand" as={"a"} href="/resume">
+              <Button
+                variant="brand"
+                as={"a"}
+                href="/resume.pdf"
+                target="_blank"
+              >
                 CV
               </Button>
             </Flex>
