@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
   },
+
+  rewrites: async () => {
+    return [
+      {
+        source: "/resume",
+        destination: "/resume.pdf",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
