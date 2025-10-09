@@ -7,7 +7,6 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import AskModal from "../components/AskModal";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -144,8 +143,6 @@ export default function Home() {
           </Box>
         </Flex>
       </Flex>
-
-      <AskModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 }
