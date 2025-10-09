@@ -1,45 +1,23 @@
 "use client";
-import { Box, Button, Flex, Highlight, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Highlight,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import AskModal from "../components/AskModal";
-import { useEffect, useState } from "react";
-import { db } from "./firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    const lastShown = localStorage.getItem("role_modal_shown");
-    if (!lastShown) {
-      setShowModal(() => true);
-      return;
-    }
-
-    const lastDate = new Date(lastShown);
-    const now = new Date();
-
-    // считаем разницу в днях
-    const diffDays =
-      (now.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24);
-
-    if (diffDays >= 2) {
-      setShowModal(() => true);
-    }
+    setTimeout(() => {
+      onOpen();
+    }, 2000);
   }, []);
-
-  const handleSelected = async (type: string) => {
-    localStorage.setItem("role_modal_shown", new Date().toISOString());
-    setShowModal(() => false);
-    try {
-      await addDoc(collection(db, "users"), {
-        type,
-        createdAt: new Date(),
-      });
-      alert("Сохранено ✅");
-    } catch (err) {
-      console.error("Ошибка:", err);
-    }
-  };
   return (
     <>
       <Flex alignItems={"center"} flexDir={"column"}>
@@ -89,12 +67,7 @@ export default function Home() {
                 WhatsApp
               </Button>
 
-              <Button
-                variant="brand"
-                as={"a"}
-                href="/resume.pdf"
-                target="_blank"
-              >
+              <Button variant="brand" as={"a"} href="/resume">
                 CV
               </Button>
             </Flex>
@@ -172,11 +145,7 @@ export default function Home() {
         </Flex>
       </Flex>
 
-      <AskModal
-        isOpen={showModal}
-        onClose={() => setShowModal(() => false)}
-        handleSelected={handleSelected}
-      />
+      <AskModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 }

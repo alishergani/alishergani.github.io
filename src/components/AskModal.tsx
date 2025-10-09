@@ -10,9 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const roles = ["Просто", "HR", "Recruiter", "Frontend dev", "Backend dev"];
-
-const AskModal = ({ isOpen, onClose, handleSelected }: any) => {
+const AskModal = ({ isOpen, onClose }: any) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -24,11 +22,11 @@ const AskModal = ({ isOpen, onClose, handleSelected }: any) => {
         </ModalHeader>
         <ModalBody>
           <Flex w={"100%"} gap={"20px"} flexWrap={"wrap"} m={"40px 0"}>
-            {roles.map((role: string) => (
-              <Button size="lg" key={role} onClick={() => handleSelected(role)}>
-                {role}
-              </Button>
-            ))}
+            <Button size="lg">Просто</Button>
+            <Button size="lg">HR</Button>
+            <Button size="lg">Recruiter</Button>
+            <Button size="lg">Frontend dev</Button>
+            <Button size="lg">Backend dev</Button>
           </Flex>
         </ModalBody>
 
