@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "ALISHER M.G",
-  description: "Alisher Meldebek Gani",
+  title: "ALISHER M",
+  description: "Alisher Meldebek",
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {
