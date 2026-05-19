@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-portfolio-bg text-portfolio-text antialiased selection:bg-portfolio-accent/30 selection:text-white;
+}
+
+.glass {
+  @apply border border-white/10 bg-white/5 backdrop-blur;
+}

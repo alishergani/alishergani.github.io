@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
-import { Providers } from "./providers";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ALISHER M",
-  description: "Alisher Meldebek",
+  title: "Alisher Meldebek — Senior Frontend Engineer",
+  description:
+    "Senior Frontend Engineer with 6+ years in fintech, travel, LMS and marketplace products. React, TypeScript, Next.js, architecture and microfrontends.",
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
   return (
-    <html suppressHydrationWarning>
-      <body>
-        <Providers>{children}</Providers>
+    <html lang="en">
+      <body className={inter.className}>
+        {children}
       </body>
     </html>
   );
