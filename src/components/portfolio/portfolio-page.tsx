@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { AnimatedEntrance } from "./animated-entrance";
 import { SectionContainer } from "./section-container";
 
@@ -11,19 +12,50 @@ const metrics = [
   { label: "Features Shipped", value: "100+" },
 ];
 
-const stack = [
-  "React",
-  "TypeScript",
-  "Next.js",
-  "Node.js",
-  "NestJS",
-  "Nx",
-  "single-spa",
-  "GraphQL",
-  "Microfrontends",
-  "Performance Optimization",
-  "Code Review",
-  "Mentoring",
+const skillGroups = [
+  {
+    title: "Frontend Engineering",
+    items: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "JavaScript",
+      "SSR",
+      "ISR",
+      "SSG",
+      "Dynamic Rendering",
+      "Server Components",
+      "Performance Optimization",
+    ],
+  },
+  {
+    title: "Architecture & Scale",
+    items: [
+      "Frontend Architecture",
+      "Microfrontends",
+      "Nx Monorepo",
+      "single-spa",
+      "Shared Type Contracts",
+      "Caching Strategy",
+      "SEO at Scale",
+      "Release Stability",
+    ],
+  },
+  {
+    title: "Backend & Integrations",
+    items: ["Node.js", "NestJS", "BFF", "REST API", "GraphQL", "Cross-team Delivery"],
+  },
+  {
+    title: "Leadership & Process",
+    items: [
+      "Code Review",
+      "Mentoring",
+      "Architecture Decisions",
+      "Technical Discovery",
+      "Feature Ownership",
+      "Engineering Collaboration",
+    ],
+  },
 ];
 
 const experiences = [
@@ -42,7 +74,7 @@ const experiences = [
     ],
   },
   {
-    company: "Alatau City Market",
+    company: "Alatau City Market (ex Jusan)",
     role: "Senior Frontend Developer",
     period: "Apr 2024 — Sep 2025",
     subtitle: "Travel Platform",
@@ -98,7 +130,7 @@ export function PortfolioPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
 
             <header className="relative z-10 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
-              <p className="text-sm font-medium tracking-[0.16em] text-white/90">Alisher M</p>
+              <p className="text-sm font-medium tracking-[0.16em] text-white/90">ALISHER MELDEBEK</p>
               <nav className="hidden items-center gap-6 md:flex">
                 {navLinks.map((item) => (
                   <a
@@ -113,8 +145,15 @@ export function PortfolioPage() {
             </header>
 
             <div className="relative z-10 flex min-h-[70vh] flex-col items-center justify-center px-6 pb-16 pt-12 text-center sm:px-10">
-              <div className="flex h-28 w-28 items-center justify-center rounded-full border-2 border-white/70 bg-slate-900/70 text-3xl font-semibold text-white shadow-glow sm:h-32 sm:w-32">
-                AM
+              <div className="h-28 w-28 overflow-hidden rounded-full border-2 border-white/70 bg-slate-900/70 shadow-glow sm:h-32 sm:w-32">
+                <Image
+                  src="/avatar.jpeg"
+                  alt="Alisher Meldebek portrait"
+                  width={128}
+                  height={128}
+                  className="h-full w-full object-cover"
+                  priority
+                />
               </div>
 
               <p className="mt-7 inline-flex rounded-full border border-white/20 bg-black/20 px-4 py-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-200">
@@ -127,7 +166,7 @@ export function PortfolioPage() {
 
               <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200/90">
                 6+ years of experience delivering production-grade products across fintech, travel,
-                LMS and marketplace domains. Worked with DAR • Kaspi.kz • Jusan Travel • Kassa24.
+                LMS and marketplace domains. Worked with DAR • Kaspi.kz • Jusan Market • Jusan Travel • Kassa24.
               </p>
 
               <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -181,14 +220,32 @@ export function PortfolioPage() {
             integrations and engineering practices. I actively mentor engineers, lead code reviews
             and contribute to architecture decisions across teams.
           </p>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {stack.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200"
+          <p className="mt-4 max-w-4xl text-base leading-relaxed text-slate-300">
+            I design rendering strategies based on product goals and traffic patterns: SSR for
+            dynamic and personalized experiences, ISR for high-traffic pages with freshness
+            requirements, and SSG for fast static delivery. This approach improves Core Web Vitals,
+            SEO visibility and release confidence.
+          </p>
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {skillGroups.map((group) => (
+              <div
+                key={group.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
               >
-                {item}
-              </span>
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-portfolio-accent">
+                  {group.title}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/12 bg-slate-900/60 px-3 py-1.5 text-sm font-medium text-slate-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </AnimatedEntrance>
