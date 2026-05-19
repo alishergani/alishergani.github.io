@@ -278,6 +278,7 @@ export function PortfolioPage() {
               Open to opportunities
             </h2>
             <p className="mt-3 text-lg text-slate-300">Remote | EU | International</p>
+            <p className="mt-2 text-sm text-portfolio-muted">Telegram: @alishermeldebek</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 className={primaryButtonClass}
@@ -289,6 +290,14 @@ export function PortfolioPage() {
               </a>
               <a className={secondaryButtonClass} href="mailto:alishermeldebek@gmail.com">
                 Email
+              </a>
+              <a
+                className={secondaryButtonClass}
+                href="https://t.me/alishermeldebek"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Telegram
               </a>
               <a
                 className={secondaryButtonClass}
