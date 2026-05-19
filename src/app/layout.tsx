@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Alisher Meldebek — Senior Frontend Engineer",
   description:
     "Senior Frontend Engineer with 6+ years in fintech, travel, LMS and marketplace products. React, TypeScript, Next.js, architecture and microfrontends.",
+  icons: {
+    icon: "/avatar.jpeg",
+    apple: "/avatar.jpeg",
+    shortcut: "/avatar.jpeg",
+  },
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {
