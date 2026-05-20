@@ -67,6 +67,7 @@ const experiences = [
     responsibilities: [
       "Developed React microfrontends",
       "Built backend and BFF services",
+      "Supported WordPress projects (SOLO)",
       "Maintained shared TypeScript contracts",
       "Participated in architecture decisions",
       "Improved release stability",
@@ -156,15 +157,16 @@ export function PortfolioPage() {
                 />
               </div>
 
-              <p className="mt-7 inline-flex rounded-full border border-white/20 bg-black/20 px-4 py-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-200">
+              {/* <p className="mt-7 inline-flex rounded-full border border-white/20 bg-black/20 px-4 py-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-200">
                 Senior Frontend Engineer
-              </p>
+              </p> */}
 
               <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight text-white sm:text-6xl">
-                Building fintech, travel and scalable web platforms.
+                Senior Frontend Dev
               </h1>
 
               <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200/90">
+              Building fintech, travel and scalable web platforms.
                 6+ years of experience delivering production-grade products across fintech, travel,
                 LMS and marketplace domains. Worked with DAR • Kaspi.kz • Jusan Market • Jusan Travel • Kassa24.
               </p>
