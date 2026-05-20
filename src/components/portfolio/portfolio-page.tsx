@@ -188,7 +188,7 @@ export function PortfolioPage() {
                 >
                   GitHub
                 </a>
-                <a className={secondaryButtonClass} href="/resume">
+                <a className={secondaryButtonClass} target="_blank" href="/mycv">
                   CV
                 </a>
                 <a className={secondaryButtonClass} href="#contact">
